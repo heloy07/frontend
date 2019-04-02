@@ -10,7 +10,10 @@
 
 
   <div align="center">
-  <input  style="width: 300px" type="text" class="form-control">
+    <input  style="width: 300px" type="text" class="form-control" [(ngModel)]="add">
+    <button  (click)="onAdd()"class="btn btn-success">Ajouter à la table</button>
+
+  <input  style="width: 300px" type="text" class="form-control" [(ngModel)]="search">
   <button  (click)="onSearch()"class="btn btn-success">search</button>
   <app-posts>hey</app-posts>
   <ul class= "list-group">

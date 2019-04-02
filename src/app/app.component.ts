@@ -10,15 +10,26 @@ export class AppComponent {
   title = 'frontend';
   posts: any[];
   http:Http;
+  search: string;
+  add:    string;
   constructor(http:Http){
     this.http=http;
   }
+  onAdd(){
+  console.log('add : '+ this.add);
+  /*this.http.put('https://localhost:8080',this.add).subscribe(response=>{
+    this.posts=response.json();
+  });*/
+
+  }
   onSearch(){
-    this.http.get('https://jsonplaceholder.typicode.com/posts').subscribe(response=>{
+    /*Url to be replaced*/
+
+    this.http.get('localhost:10080/ad/create?'+this.search).subscribe(response=>{
       this.posts=response.json();
 
     });
-    console.log('trying to search');
+    console.log('trying to search: '+this.search);
 
   }
   }
