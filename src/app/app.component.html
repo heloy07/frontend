@@ -13,6 +13,13 @@
   <input  style="width: 300px" type="text" class="form-control">
   <button  (click)="onSearch()"class="btn btn-success">search</button>
   <app-posts>hey</app-posts>
+  <ul class= "list-group">
+    <li
+        *ngFor="let post of posts"
+        class= "list-group-item">
+        {{post.title}}
+    </li>
+  </ul>
 </div>
 
 
